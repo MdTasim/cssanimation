@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+:root {
+  --bg: #040d21;
+  --green: #2ea64f;
+  --g-shadow: inset 0 0 20px #03a9f4, 0 0 120px #03a9f4;
+  --h-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9, 0 0 30px #00fff9,
+    0 0 10px #00fff9, 0 0 40px #00fff9, 0 0 50px #00fff9, 0 0 60px #00fff9,
+    0 0 10px #00fff9, 0 0 70px #00fff9, 0 0 80px #00fff9, 0 0 90px #00fff9,
+    0 0 100px #00fff9;
+}
+body {
+  background: var(--bg);
+}
+img {
+  width: 100%;
+}
+p,
+a {
+  font-size: 1.6rem;
+}
+.container {
+  max-width: 1240px;
+  padding: 0 2rem;
+  margin: auto;
+}
+.container-max {
+  width: 100%;
+  padding: 0 5rem;
+}
+header .container-max,
+header .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+header .logo {
+  width: 10rem;
+}
+header {
+  background: transparent;
+  padding: 1.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+header .links a {
+  color: white;
+}
+.btn {
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.btn.signup {
+  background: var(--green);
+  color: white;
+}
+main {
+  padding: 10rem 0;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+}
+.wraper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10rem;
+  align-items: centers;
+}
+.left-content .typo h1 {
+  color: white;
+  font-size: 5.5rem;
+  text-transform: capitalize;
+  line-height: 1.3;
+}
+.left-content .typo p {
+  color: #ffffffae;
+  font-weight: 400;
+  font-size: 1.8rem;
+  margin: 2rem 0;
+}
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+.newsletter input {
+  width: 100%;
+  height: 100%;
+  padding: 0 3rem;
+  font-size: 1.6rem;
+  height: 5rem;
+}
+.newsletter .btn {
+  border-radius: unset;
+  background: var(--green);
+  color: white;
+  height: 5rem;
+}
+[class*="overlay"] {
+  position: absolute;
+  width: 90rem;
+}
+.overlay1 {
+  left: -30rem;
+  top: -30rem;
+}
+.overlay2 {
+  right: -20rem;
+  bottom: -20rem;
+  width: 70rem;
+}
+.earth {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  height: 40rem;
+  width: 40rem;
+  border-radius: 50%;
+  position: relative;
+  animation: round 5s linear infinite;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, transparent, #00aeff);
+  background-repeat: no-repeat;
+  background-size: 200px 360px;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
+}
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #00fff9;
+  z-index: 100;
+  box-shadow: var(--h-shadow);
+  border-radius: 50%;
+}
+.loader span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  background: var(--bg);
+  backdrop-filter: blur(10px);
+}
+.globe {
+  position: absolute;
+  width: 35rem;
+  height: 35rem;
+  border-radius: 50%;
+  background: url(images/map.png);
+  background-size: cover;
+  box-shadow: var(--g-shadow);
+  animation: globe 15s linear infinite;
+}
+.menu {
+  display: none;
+}
+@keyframes globe {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 250%;
+  }
+}
+@keyframes round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 600px) {
+  .container-max {
+    padding: 0 2rem;
+    height: 100%;
+  }
+  header {
+    height: 10vh;
+    background: #000000b7;
+  }
+  header .links {
+    position: fixed;
+    height: 90vh;
+    width: 100%;
+    top: 10vh;
+    left: 0;
+    background: var(--bg);
+    flex-direction: column;
+    z-index: 99999;
+    padding: 5rem 0;
+    transform: translateX(100%);
+    transition: 0.3s;
+  }
+  header .links.active {
+    transform: translateX(0);
+  }
+  .wraper {
+    grid-template-columns: 1fr;
+  }
+  .left-content .typo h1 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .left-content .typo p {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .earth {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .left-content {
+    position: relative;
+    z-index: 1;
+  }
+  .menu {
+    display: block;
+  }
+  .menu span {
+    color: white;
+    font-size: 3rem;
+  }
+}

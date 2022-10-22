@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-max">
+        <div class="logo">
+          <img src="images/logo.svg" alt="" />
+        </div>
+        <div class="links">
+          <a href="#" onclick="menu()">Home</a>
+          <a href="#" onclick="menu()">About</a>
+          <a href="#" onclick="menu()">Service</a>
+          <a href="#" onclick="menu()">Contact</a>
+          <a href="#" onclick="menu()">
+            <button class="btn signup">Signup</button>
+          </a>
+        </div>
+        <div class="menu" onclick="menu()">
+          <span class="material-icons"> menu </span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="wraper">
+          <div class="left-content">
+            <div class="typo">
+              <h1>We will create the best hero section!</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                nemo a ut eaque id fugiat sapiente mollitia molestias.
+              </p>
+            </div>
+            <div class="newsletter">
+              <input type="email" placeholder="Your email" />
+              <button class="btn">Subscribe</button>
+            </div>
+          </div>
+
+          <div class="animated-globe">
+            <div class="earth">
+              <div class="loader">
+                <span></span>
+              </div>
+              <div class="globe"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="images/gradient1.png" class="overlay1" alt="" />
+      <img src="images/gradient2.png" class="overlay2" alt="" />
+    </main>
+
+    <script>
+      let links = document.querySelector(".links");
+      function menu() {
+        links.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
